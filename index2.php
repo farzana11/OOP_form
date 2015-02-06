@@ -11,11 +11,14 @@
 </form>
 </html>
 <?php
+require "employee.php";
 if (isset($_POST["id"]) && isset($_POST["name"]) &&isset($_POST["salary"]))
 {
-    $id = $_POST["id"];
-    $name = $_POST["name"];
-    $salary = $_POST["salary"];
-    echo "Id: ", $id, ", Name: ", $name, " , Salary: ", $salary;
+    $anEmployee=new Employee();
+    $anEmployee->id=$_POST["id"];
+    $anEmployee->name=$_POST["name"];
+    $anEmployee->salary=$_POST["salary"];
+
+    echo "Id: ",  $anEmployee->id, ", Name: ",  $anEmployee->name, " , Salary: ",  $anEmployee->salary;
 }
 ?>
